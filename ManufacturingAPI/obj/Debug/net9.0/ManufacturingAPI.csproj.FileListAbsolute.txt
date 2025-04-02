@@ -34,3 +34,4 @@
 /Users/mahmu/Desktop/Coding Projects/comment-chatbot/ManufacturingAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/mahmu/Desktop/Coding Projects/comment-chatbot/ManufacturingAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/mahmu/Desktop/Coding Projects/comment-chatbot/ManufacturingAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/mahmu/Desktop/Coding Projects/comment-chatbot/ManufacturingAPI/obj/Debug/net9.0/ManufacturingAPI.sourcelink.json
