@@ -1,44 +1,48 @@
-using ManufacturingAPI.Models;
-using ManufacturingAPI.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
-namespace ManufacturingAPI.Controllers
+[Route("api/[controller]")]
+[ApiController]
+public class CommentsController : ControllerBase
 {
-    [Route("api/comments")]
-    [ApiController]
-    public class CommentsController : ControllerBase
+    private static readonly List<string> comments = new()
     {
-        private readonly CommentService _commentService;
+        "Machine stopped due to overheating.",
+        "Defective part found in production line.",
+        "Routine maintenance completed successfully."
+    };
 
-        public CommentsController()
+    [HttpGet]
+    public IActionResult GetComments()
+    {
+        return Ok(comments);
+    }
+
+    [HttpPost]
+    public IActionResult AddComment([FromBody] string comment)
+    {
+        comments.Add(comment);
+        
+        // Generate a simple response based on the comment
+        string botResponse = GenerateResponse(comment);
+        
+        return Ok(new { userMessage = comment, botMessage = botResponse });
+    }
+
+    private string GenerateResponse(string comment)
+    {
+        if (comment.ToLower().Contains("overheating"))
         {
-            _commentService = new CommentService();
+            return "Please check the cooling system and reduce machine load.";
         }
-
-        [HttpGet]
-        public IActionResult GetComments()
+        else if (comment.ToLower().Contains("defective"))
         {
-            return Ok(_commentService.GetComments());
+            return "Check the quality control logs for the defective batch.";
         }
-
-        [HttpGet("{id}")]
-        public IActionResult GetComment(int id)
+        else if (comment.ToLower().Contains("maintenance"))
         {
-            var comment = _commentService.GetCommentById(id);
-            if (comment == null)
-                return NotFound(new { message = "Comment not found" });
-
-            return Ok(comment);
+            return "Routine maintenance is crucial for efficiency. Keep it up!";
         }
-
-        [HttpPost]
-        public IActionResult AddComment([FromBody] string text)
-        {
-            if (string.IsNullOrWhiteSpace(text))
-                return BadRequest(new { message = "Comment cannot be empty" });
-
-            _commentService.AddComment(text);
-            return Ok(new { message = "Comment added successfully!" });
-        }
+        return "Thank you for your input! Let me know if you need assistance.";
     }
 }
