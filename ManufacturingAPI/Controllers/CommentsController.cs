@@ -43,6 +43,6 @@ public class CommentsController : ControllerBase
         {
             return "Routine maintenance is crucial for efficiency. Keep it up!";
         }
-        return "Thank you for your input! Let me know if you need assistance.";
+        return "Hello, Thank you for your input! Let me know if I can be of  assistance.";
     }
 }
