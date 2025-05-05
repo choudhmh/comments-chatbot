@@ -1,40 +1,61 @@
-<<<<<<< HEAD
-# comments-chatbot
-=======
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Comment Event System
 
-## Getting Started
+A web application that displays and manages team event data with quality metrics and custom comment support. Built with **Next.js**, **Tailwind CSS**, and connected to a **SQL Server** database hosted on Azure.
 
-First, run the development server:
+---
+
+## 🧩 Features
+
+- ✅ Fetches and displays event data from an Azure-hosted SQL Server
+- ✅ Lists all available database tables
+- ✅ Client-side rendering using `use client` in Next.js
+- ✅ Fully styled with Tailwind CSS
+- ✅ Built to deploy on Azure Static Web Apps
+- ✅ Extensible for adding comments and notes to events
+
+---
+
+## ⚙️ Tech Stack
+
+- **Frontend:** Next.js 14, React, Tailwind CSS
+- **Backend (API):** Next.js Route Handlers (`/api/comments`)
+- **Database:** SQL Server (`vorne-sql-db` on Azure)
+- **Hosting:** Azure Static Web Apps + Azure SQL
+
+---
+
+## 📁 Project Structure
 
 ```bash
+.
+├── src
+│   └── app
+│       ├── comments          # Route handling logic
+│       │   └── route.ts      # SQL connection + data API
+│       └── page.tsx          # Frontend React rendering
+├── public                    # Static assets
+├── .env.local               # Environment variables
+├── tailwind.config.ts
+└── README.md
+
+Setup & Deployment
+
+1. Clone the repo
+git clone https://github.com/your-username/comment-event-system.git
+cd comment-event-system
+
+2. Install dependencies
+npm install
+
+3. Add environment variables
+Create a .env.local file with your database credentials:
+
+DB_USER=usrChatBot
+DB_PASS=Catalyst-Absence-Retrace5
+DB_SERVER=demo.oeeintellisuite.com
+DB_NAME=vorne-sql-db
+
+4. Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Access the app at: http://localhost:3000
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
->>>>>>> 4892a18 (Initial commit from Create Next App)
