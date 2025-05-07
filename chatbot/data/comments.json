@@ -1,0 +1,124 @@
+[
+    {
+      "eventType": "Shift",
+      "eventContext": {
+        "shiftId": "SHIFT_A_MORNING",
+        "machineId": "LABEL_PRINTER_3",
+        "startTime": "2025-04-21T06:00:00Z",
+        "endTime": "2025-04-21T14:00:00Z"
+      },
+      "parentComments": [
+        {
+          "commentId": "cmt-001",
+          "author": {
+            "userId": "u-op-1",
+            "name": "Sarah Lopez",
+            "role": "Operator"
+          },
+          "timestamp": "2025-04-21T07:30:00Z",
+          "text": "Machine started on time, but there was minor jittering during the first 20 labels.",
+          "replies": [
+            {
+              "commentId": "cmt-001-r1",
+              "author": {
+                "userId": "u-mt-1",
+                "name": "Tom Jenkins",
+                "role": "Maintenance"
+              },
+              "timestamp": "2025-04-21T07:45:00Z",
+              "text": "Checked tension rollers—slight misalignment found. Realigned manually."
+            }
+          ]
+        },
+        {
+          "commentId": "cmt-002",
+          "author": {
+            "userId": "u-sup-1",
+            "name": "Leah Kim",
+            "role": "Supervisor"
+          },
+          "timestamp": "2025-04-21T10:00:00Z",
+          "text": "Operators need to reduce label waste on line 3. 4% above target today.",
+          "replies": []
+        }
+      ]
+    },
+    {
+      "eventType": "Downtime",
+      "eventContext": {
+        "downtimeId": "DT-20250421-003",
+        "machineId": "PRESS_UNIT_1",
+        "startTime": "2025-04-21T15:20:00Z",
+        "endTime": "2025-04-21T15:55:00Z",
+        "reasonCode": "INK_FLOW_ISSUE"
+      },
+      "parentComments": [
+        {
+          "commentId": "cmt-003",
+          "author": {
+            "userId": "u-op-2",
+            "name": "Mike B.",
+            "role": "Operator"
+          },
+          "timestamp": "2025-04-21T15:25:00Z",
+          "text": "Press stopped mid-run. Ink flow alarm triggered. Checked cartridge—looks full.",
+          "replies": [
+            {
+              "commentId": "cmt-003-r1",
+              "author": {
+                "userId": "u-mt-2",
+                "name": "Asha R.",
+                "role": "Maintenance"
+              },
+              "timestamp": "2025-04-21T15:35:00Z",
+              "text": "Pump filter was clogged. Cleared debris and restarted the press."
+            },
+            {
+              "commentId": "cmt-003-r2",
+              "author": {
+                "userId": "u-qc-1",
+                "name": "John D.",
+                "role": "Quality Control"
+              },
+              "timestamp": "2025-04-21T15:50:00Z",
+              "text": "Post-restart output okay. First 30 labels had color variation. Scrapped."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "eventType": "Shift",
+      "eventContext": {
+        "shiftId": "SHIFT_B_NIGHT",
+        "machineId": "LABEL_PRINTER_3",
+        "startTime": "2025-04-21T22:00:00Z",
+        "endTime": "2025-04-22T06:00:00Z"
+      },
+      "parentComments": [
+        {
+          "commentId": "cmt-004",
+          "author": {
+            "userId": "u-op-3",
+            "name": "David H.",
+            "role": "Operator"
+          },
+          "timestamp": "2025-04-22T01:30:00Z",
+          "text": "Machine printhead cleaning took longer than usual—over 20 minutes.",
+          "replies": [
+            {
+              "commentId": "cmt-004-r1",
+              "author": {
+                "userId": "u-mt-1",
+                "name": "Tom Jenkins",
+                "role": "Maintenance"
+              },
+              "timestamp": "2025-04-22T01:45:00Z",
+              "text": "Build-up on the head was heavier than normal. May need to review pre-clean steps."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  

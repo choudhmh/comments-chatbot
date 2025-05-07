@@ -1,0 +1,42 @@
+﻿Product Manual - Meet XL pages 7-10 have good info on States, Cycles, Counts, Times. Also Appendix A goes over the different Metrics
+https://www.vorne.com/support/product-manuals/meet-xl-2-19.pdf
+
+
+
+
+Production Time = Setup + Down + Run
+In Count = Total Count
+Job = Work Order
+V1 vs V2
+* V1 is the old version of the Vorne board
+   * Data was in the interval_stream and timeline_stream tables
+   * This had less built in reports and data viewing functionality but had more programs and customizability
+* V2 is the new version (on 2.19 right now)
+   * Data is in v2_xxxx tables
+   * This is the data we are using
+Device Key 
+* Synonyms: Work station, machine, device
+* A single device that work is being done on that the Vorne board is connected to
+* May technically be made of multiple machines that is grouped into one but for data collection purposes we consider it as one device
+* Example - Printing Press XL106G
+   * Typically a Manufacturer with model and a unique identifier, but up to the client
+Down time (v1 term)
+* Synonyms: Unplanned Stop Time (v2 term)
+* The device still has people there and is supposed to be running again eventually but is temporarily down or not producing
+* Usually requires a reason scan so supervisor know why it is down
+* Example 
+   * Down - Ran out of Ink
+   * Down - Press Broke
+   * Down - Paper Jam
+Setup Time (v1 term)
+* Synonyms: Planned Stop Time (v2 term), Changeover
+* The device is not running at full capacity, it’s getting set up to start running. Typically happens at the start of a job but can happen in the middle if they run of some raw material (like paper rolls for a printing press)
+* Some devices are configured to automatically go into run after a certain run rate is achieved 
+Standby Time (v1 term)
+* Synonyms: Non Production Time, Not Scheduled Time (v2 term)
+* The device is not scheduled to run. It’s a weekend or holiday
+Run Time
+* The device is running at a decent set rate
+* Some devices can be configured to record running normally vs running slowly
+Ideal Cycle Time
+* The fastest possible time to run a cycle, assuming optimal conditions without any delays or inefficiencies

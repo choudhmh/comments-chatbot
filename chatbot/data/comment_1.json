@@ -1,0 +1,175 @@
+[
+  {
+    "eventType": "Shift",
+    "eventContext": {
+      "shiftId": "2024-10-27-A",
+      "startTime": "2024-10-27T07:00:00Z",
+      "endTime": "2024-10-27T15:00:00Z"
+    },
+    "parentComments": [
+      {
+        "commentId": "c1",
+        "author": {
+          "userId": "u1",
+          "name": "Alice Johnson",
+          "role": "Operator"
+        },
+        "timestamp": "2024-10-27T07:15:00Z",
+        "text": "Shift started smoothly. All machines running as expected.",
+        "replies": []
+      },
+      {
+        "commentId": "c2",
+        "author": {
+          "userId": "u2",
+          "name": "Bob Smith",
+          "role": "Supervisor"
+        },
+        "timestamp": "2024-10-27T12:30:00Z",
+        "text": "Good progress so far.  Keep an eye on the mixing tank temperature \u2013 it's been fluctuating slightly.",
+        "replies": [
+          {
+            "commentId": "c3",
+            "author": {
+              "userId": "u1",
+              "name": "Alice Johnson",
+              "role": "Operator"
+            },
+            "timestamp": "2024-10-27T12:35:00Z",
+            "text": "Will do.  I've already adjusted it once, but will keep a closer watch."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "eventType": "Downtime",
+    "eventContext": {
+      "downtimeId": "dt1",
+      "machineId": "Mixer-3",
+      "startTime": "2024-10-27T10:00:00Z",
+      "endTime": "2024-10-27T10:45:00Z",
+      "reasonCode": "Mechanical Failure"
+    },
+    "parentComments": [
+      {
+        "commentId": "c4",
+        "author": {
+          "userId": "u1",
+          "name": "Alice Johnson",
+          "role": "Operator"
+        },
+        "timestamp": "2024-10-27T10:02:00Z",
+        "text": "Mixer-3 has stopped working.  Loud grinding noise.",
+        "replies": [
+          {
+            "commentId": "c5",
+            "author": {
+              "userId": "u3",
+              "name": "Charlie Brown",
+              "role": "Maintenance"
+            },
+            "timestamp": "2024-10-27T10:10:00Z",
+            "text": "On my way.  Will assess the issue."
+          },
+          {
+            "commentId": "c6",
+            "author": {
+              "userId": "u3",
+              "name": "Charlie Brown",
+              "role": "Maintenance"
+            },
+            "timestamp": "2024-10-27T10:45:00Z",
+            "text": "Fixed.  Belt slippage.  Back online."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "eventType": "Shift",
+    "eventContext": {
+      "shiftId": "2024-10-27-B",
+      "startTime": "2024-10-27T15:00:00Z",
+      "endTime": "2024-10-27T23:00:00Z"
+    },
+    "parentComments": [
+      {
+        "commentId": "c7",
+        "author": {
+          "userId": "u4",
+          "name": "Diana Lee",
+          "role": "Operator"
+        },
+        "timestamp": "2024-10-27T15:10:00Z",
+        "text": "Production running smoothly after the earlier hiccup.",
+        "replies": []
+      }
+    ]
+  },
+  {
+    "eventType": "Downtime",
+    "eventContext": {
+      "downtimeId": "dt2",
+      "machineId": "Filler-1",
+      "startTime": "2024-10-27T18:30:00Z",
+      "endTime": "2024-10-27T19:00:00Z",
+      "reasonCode": "Quality Issue"
+    },
+    "parentComments": [
+      {
+        "commentId": "c8",
+        "author": {
+          "userId": "u4",
+          "name": "Diana Lee",
+          "role": "Operator"
+        },
+        "timestamp": "2024-10-27T18:32:00Z",
+        "text": "Filler-1 producing inconsistent fill levels.  Need QC check.",
+        "replies": [
+          {
+            "commentId": "c9",
+            "author": {
+              "userId": "u5",
+              "name": "Eva Rodriguez",
+              "role": "Quality Control"
+            },
+            "timestamp": "2024-10-27T18:40:00Z",
+            "text": "Inspecting now.  Looks like a sensor calibration issue."
+          },
+          {
+            "commentId": "c10",
+            "author": {
+              "userId": "u5",
+              "name": "Eva Rodriguez",
+              "role": "Quality Control"
+            },
+            "timestamp": "2024-10-27T18:55:00Z",
+            "text": "Calibration complete.  Resumed normal operation."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "eventType": "Shift",
+    "eventContext": {
+      "shiftId": "2024-10-28-A",
+      "startTime": "2024-10-28T07:00:00Z",
+      "endTime": "2024-10-28T15:00:00Z"
+    },
+    "parentComments": [
+      {
+        "commentId": "c11",
+        "author": {
+          "userId": "u2",
+          "name": "Bob Smith",
+          "role": "Supervisor"
+        },
+        "timestamp": "2024-10-28T07:05:00Z",
+        "text": "New batch of raw materials arrived.  Please ensure proper handling and storage.",
+        "replies": []
+      }
+    ]
+  }
+]
