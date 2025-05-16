@@ -1,12 +1,21 @@
-
 import { NextResponse } from "next/server";
-
+import { generateResponse } from "./chatbox";
 
 export async function POST(req: Request) {
-  const { message } = await req.json();
+  const { message, provider = "gemini" } = await req.json();
+
+  if (!message) {
+    return NextResponse.json({ error: "No message provided." }, { status: 400 });
+  }
 
   try {
-    // Run OpenAI and DeepSeek calls in parallel
+    // Send all queries to chatbox.ts first
+    if (provider === "gemini") {
+      const geminiReply = await generateResponse(message);
+      return NextResponse.json({ gemini: geminiReply });
+    }
+
+    // Handle OpenAI and DeepSeek in parallel
     const [openaiRes, deepseekRes] = await Promise.all([
       fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
@@ -44,11 +53,12 @@ export async function POST(req: Request) {
       openai: openaiReply,
       deepseek: deepseekReply,
     });
-  } catch (error) {
-    console.error("Error:", error);
-    return NextResponse.json({ error: "Failed to get responses" }, { status: 500 });
+  } catch (err) {
+    console.error("API Error:", err);
+    return NextResponse.json({ error: "Something went wrong." }, { status: 500 });
   }
 }
+
 
 
 
