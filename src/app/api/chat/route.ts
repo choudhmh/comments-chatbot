@@ -9,13 +9,12 @@ export async function POST(req: Request) {
   }
 
   try {
-    // Send all queries to chatbox.ts first
+   
     if (provider === "gemini") {
       const geminiReply = await generateResponse(message);
       return NextResponse.json({ gemini: geminiReply });
     }
 
-    // Handle OpenAI and DeepSeek in parallel
     const [openaiRes, deepseekRes] = await Promise.all([
       fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
