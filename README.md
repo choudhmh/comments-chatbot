@@ -55,13 +55,13 @@ npm install
 
 Create a .env.local file with your database credentials:
 
-DB_USER=usrChatBot
+DB_USER=
 
-DB_PASS=Catalyst-Absence-Retrace5
+DB_PASS=
 
-DB_SERVER=demo.oeeintellisuite.com
+DB_SERVER=
 
-DB_NAME=vorne-sql-db
+DB_NAME=
 
 **4. Run locally**
 
